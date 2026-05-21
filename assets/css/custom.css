@@ -1,0 +1,121 @@
+:root {
+  --primary: #0f172a;
+  --accent: #f59e0b;
+  --text: #334155;
+  --light: #f8fafc;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: var(--text);
+  background: var(--light);
+}
+
+.navbar-brand { letter-spacing: 1px; }
+.btn-warning { background: var(--accent); border: none; font-weight: 500; }
+.btn-warning:hover { background: #d97706; }
+.card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1) !important; }
+.hero-section { background-attachment: fixed; }
+.swiper-pagination-bullet-active { background: var(--accent) !important; }
+
+/* Professional Job Card Styling */
+.job-card {
+  border-left: 3px solid var(--accent, #d4af37) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.job-card:hover {
+  transform: translateX(5px);
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1) !important;
+}
+.job-card .text-muted small {
+  line-height: 1.6;
+}
+
+/* Keep form visible on desktop while scrolling jobs */
+@media (max-width: 991.98px) {
+  .sticky-lg-top { position: static !important; }
+}
+
+/* Clean icon spacing */
+.job-card .bi {
+  font-size: 0.95rem;
+}
+
+/* Team Section Styles */
+.team-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #fff;
+}
+.team-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15) !important;
+}
+.team-img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border: 3px solid var(--accent, #d4af37);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+/* ===== GLASSY NAVBAR ===== */
+.navbar-glassy {
+  background: rgba(15, 23, 42, 0.65) !important;
+  backdrop-filter: blur(15px) saturate(180%);
+  -webkit-backdrop-filter: blur(15px) saturate(180%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.3s ease;
+}
+.navbar-glassy.scrolled {
+  background: rgba(15, 23, 42, 0.85) !important;
+  backdrop-filter: blur(20px) saturate(200%);
+  -webkit-backdrop-filter: blur(20px) saturate(200%);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+/* ===== ACTIVE NAV LINK (Gold & Underline) ===== */
+.navbar-glassy .nav-link {
+  position: relative;
+  color: rgba(255,255,255,0.85) !important;
+  transition: all 0.2s ease;
+}
+
+/* Hover State */
+.navbar-glassy .nav-link:hover {
+  color: var(--accent) !important;
+}
+
+/* Active State (The Fix) */
+.navbar-glassy .nav-link.active {
+  color: var(--accent) !important;
+  font-weight: 600 !important;
+}
+
+/* Gold Underline */
+.navbar-glassy .nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24px;
+  height: 2px;
+  background-color: var(--accent);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.navbar-glassy .nav-link.active:hover::after {
+  width: 40px;
+}
+
+/* Mobile View: Use Background Pill Instead of Underline */
+@media (max-width: 991px) {
+  .navbar-glassy .nav-link.active::after {
+    display: none !important;
+  }
+  .navbar-glassy .nav-link.active {
+    background: rgba(212, 175, 55, 0.15);
+    border-radius: 6px;
+  }
+}
